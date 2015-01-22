@@ -11,24 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutBindingHandlerScaffolder", "KnockoutBindingHandlerScaffolder\KnockoutBindingHandlerScaffolder.csproj", "{0D9E134C-630A-47B5-A84C-675EA6D3599E}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfsprod:8080/tfs/drivetime%20master%20collection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DT.Templates.WebUI\\DT.Templates.WebUI.csproj
-		SccProjectName1 = DT.Templates.WebUI
-		SccLocalPath1 = DT.Templates.WebUI
-		SccProjectUniqueName2 = DriveTimeTemplates\\DriveTimeTemplates.csproj
-		SccProjectName2 = DriveTimeTemplates
-		SccLocalPath2 = DriveTimeTemplates
-		SccProjectUniqueName3 = KnockoutComponentScaffolder\\KnockoutComponentScaffolder.csproj
-		SccProjectName3 = KnockoutComponentScaffolder
-		SccLocalPath3 = KnockoutComponentScaffolder
-		SccProjectUniqueName4 = KnockoutBindingHandlerScaffolder\\KnockoutBindingHandlerScaffolder.csproj
-		SccProjectName4 = KnockoutBindingHandlerScaffolder
-		SccLocalPath4 = KnockoutBindingHandlerScaffolder
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Dev|Any CPU = Dev|Any CPU
 		Prod|Any CPU = Prod|Any CPU
