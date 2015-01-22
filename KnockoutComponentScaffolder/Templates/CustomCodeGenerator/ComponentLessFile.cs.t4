@@ -1,0 +1,11 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".less" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="ComponentName" type="System.String" #>
+/* TODO: Add styles for component: <#= ComponentName #> */

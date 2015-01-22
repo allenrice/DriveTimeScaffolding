@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TemplateReport>
+  <ItemTemplates />
+  <ProjectTemplates>
+    <ProjectTemplate Path="..\DT.Templates.WebUI\_Definitions\_project.vstemplate.xml" Name="DriveTime WebUI Template" Description="WebUI starter project, includes:&#xA;    - a base application with TypeScript and Knockout&#xA;    - PushState navigation with Hasher and Crossroads&#xA;    - client side builds with Gulp&#xA;    - package management with NPM and Bower&#xA;    - unit tests with Jasmine and Karma&#xA;    - UI framework with Bootstrap" ProjectType="CSharp" ProjectSubType="" />
+  </ProjectTemplates>
+  <Snippets />
+</TemplateReport>

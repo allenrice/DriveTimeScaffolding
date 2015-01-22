@@ -1,0 +1,31 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="ComponentName" type="System.String" #>
+<#@ parameter name="ComponentLocation" type="System.String" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+/// <reference path="../../jasmine.d.ts" />
+
+import ko = require("knockout");
+import target = require("<#= FullAMDPathToComponentForRegistrar #>");
+
+describe('<#= ComponentName #> component', () => {
+
+	//beforeEach(function () { });
+
+	//afterEach(function () { });
+
+    it('should do something', () => {
+		
+		//var args = { data: ko.observable("value") };
+
+		//var instance = new target.viewModel(args);
+
+		//expect(instance.greeting()).toBe("value");
+    });
+
+});

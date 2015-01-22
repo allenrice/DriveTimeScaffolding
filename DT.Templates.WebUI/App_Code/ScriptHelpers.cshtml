@@ -1,0 +1,35 @@
+﻿
+
+@helper AmdInclude(string config, string startupModule, string prodFile)
+{
+    var useDebugFiles = false;
+
+    // normally, this is the mechanism that will control the prod vs debug script tag
+    #if DEBUG
+    useDebugFiles = true;
+    #endif
+
+    // as a secondary option, you can set debug=true|false in the querystring to control prod vs debug script tag
+    if (Request.QueryString.AllKeys.Contains("debug"))
+    {
+        useDebugFiles = (Request.QueryString["debug"] == "true");
+    }
+
+    <text>
+
+        @if (useDebugFiles)
+        {
+            <!--
+                Use the querystring debug=true|false to manually control prod vs dev script tag,
+                just make sure the prod bundle is built first, as it doesnt build in dev configurations
+            -->
+            <script src="@config"></script>
+            <script data-main="@startupModule" src="/src/bower_modules/requirejs/require.js"></script>
+        }
+        else
+        {
+            <script src="@prodFile"></script>
+        }
+
+    </text>
+}

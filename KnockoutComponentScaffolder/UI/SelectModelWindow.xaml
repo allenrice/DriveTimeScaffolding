@@ -1,0 +1,49 @@
+﻿<Window x:Class="KnockoutComponentScaffolder.UI.SelectModelWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" SizeToContent="WidthAndHeight"  Title="Add new Knockout 3.2 component" MinWidth="520" MinHeight="305" d:DesignHeight="734">
+    <Grid>
+        <!--<Label Content="Choose a Model Type:" HorizontalAlignment="Left"   Margin="35,39,0,0" VerticalAlignment="Top"/>-->
+        <!--<ComboBox HorizontalAlignment="Left"
+              Margin="169,43,0,0"
+              VerticalAlignment="Top"
+              ItemsSource="{Binding ModelTypes}"
+              DisplayMemberPath="DisplayName"
+              SelectedItem="{Binding SelectedModelType, Mode=OneWayToSource}"
+              Width="311"/>-->
+        <Button Content="Add" IsDefault="True" HorizontalAlignment="Left" Margin="317,261,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.187,0.75" Click="Button_Click"/>
+        <Button Content="Cancel" IsCancel="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="405,261,0,0"/>
+        <CheckBox IsChecked="{Binding GenerateLessFile, Mode=TwoWay}" Content="Generate LESS file for component" HorizontalAlignment="Left" Margin="169,114,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsEnabled="{Binding GenerateLessFile, Mode=OneWay}" IsChecked="{Binding ImportLessFile, Mode=TwoWay}" Content="Import generated LESS file into all-components.less" HorizontalAlignment="Left" Margin="169,134,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsChecked="{Binding RegisterComponent, Mode=TwoWay}" Content="Register component in app/startup" HorizontalAlignment="Left" Margin="169,174,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsEnabled="{Binding RegisterComponent, Mode=OneWay}" IsChecked="{Binding DynamicallyLoaded, Mode = TwoWay}" Content="Dynamically load component at run time" HorizontalAlignment="Left" Margin="169,194,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding ComponentName, Mode = TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+        <Label Content="New component name:" HorizontalAlignment="Left"   Margin="32,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+        <CheckBox IsChecked="{Binding GenerateUnitTests, Mode=TwoWay}" Content="Generate empty unit tests" HorizontalAlignment="Left" Margin="169,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.725,7.4"/>
+        <Expander Header="Advanced" HorizontalAlignment="Left" Margin="169,291,0,20" VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="518" Margin="-156,0,0,0" Grid.ColumnSpan="2">
+                <Label Content="Path to register component in:" HorizontalAlignment="Left"   Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding RegisterComponent, Mode=OneWay}" Text="{Binding ComponentRegistrationLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="Path to put component in**:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox Text="{Binding ComponentLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="Path to parent test module:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding GenerateUnitTests, Mode=OneWay}" Text="{Binding UnitTestModuleLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="Path to put unit test in:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding GenerateUnitTests, Mode=OneWay}" Text="{Binding UnitTestCreationLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="Path to gulp file:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding RegisterComponent, Mode=OneWay}" Text="{Binding PathToGulpFile, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="Path to LESS file:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding ImportLessFile, Mode=OneWay}" Text="{Binding MasterLessFile, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+                <Label Content="&#xD;&#xA;** Note: If you change this path, you will have some very silght issues with pathing.  &#xD;&#xA;You will just have to update some references to the .d.ts files manually." HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615" Height="62"/>
+            </StackPanel>
+        </Expander>
+        <CheckBox IsChecked="{Binding GenerateStrippedDownComponent, Mode=TwoWay}" Content="Generate stripped down component " HorizontalAlignment="Left" Margin="169,76,0,0" VerticalAlignment="Top"/>
+
+
+
+
+
+    </Grid>
+</Window>

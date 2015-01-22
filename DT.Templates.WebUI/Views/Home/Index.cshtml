@@ -1,0 +1,10 @@
+﻿@model DT.Templates.WebUI.Models.TypeLiteDemoClass
+
+<demo-application params="data: @(Json.Encode(Model))"></demo-application>
+
+@section scripts {
+    @ScriptHelpers.AmdInclude(
+        config: "/src/require.config.js",
+        startupModule: "app/startup",
+        prodFile: "/dist/scripts.js")
+}

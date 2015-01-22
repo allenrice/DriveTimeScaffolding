@@ -1,0 +1,117 @@
+﻿
+
+<h1>What's included in this project</h1>
+<div class="well">
+    Welcome to your new application!  Here is a short guide to help find yourself around.
+    <ul>
+        <li>
+            <h2><a href="http://www.asp.net/mvc" target="_blank">MVC</a></h2>
+            This project is built on top of a stripped down ASP.NET MVC 5 Web Application template
+        </li>
+        <li>
+            <h2><a href="http://typescriptlang.org" target="_blank">TypeScript</a></h2>
+            TypeScript has been created throughout the application and is compiled by gulp at build time into AMD Modules.  To enable Build-on-Save (file watching), you can run watch.bat which will watch for changes to your css and TS and will rebuild both when changes occur.
+        </li>
+        <li>
+            <h2><a href="http://requirejs.org/docs/whyamd.html" target="_blank">AMD</a> & <a href="http://requirejs.org/" target="_blank">RequireJS</a></h2>
+            AMD was chosen as the <i>module format</i>, since TypeScript can directly build to that format, and RequireJS was chosen as the <i>module loader</i>.  RequireJS is configured via <a href="/src/require.config.js">/src/require.config.js</a> and can load text via the <a href="https://github.com/requirejs/text">requirejs-text</a> requirejs plugin (which was installed via bower).
+        </li>
+        <li>
+            <h2><a href="http://type.litesolutions.net" target="_blank">TypeLite</a></h2>
+            TypeLite has been included as a nuget package that will generate TypeScript definitions files for your C# classes and enums.
+            As an example, it is generating a definition for an example class and enum to start with.<br />
+            Source File: <a href="/src/TypeLite.Net4.d.ts">/src/TypeLite.Net4.d.ts</a>.<br />
+            Generated Definition File: <a href="/src/TypeLite.Net4.tt">/src/TypeLite.Net4.tt</a><br />
+            Generated TypeScript File: <a href="/src/Enums.ts">/src/Enums.ts</a>
+
+        </li>
+        <li>
+            <h2><a href="http://www.knockoutjs.com" target="_blank">Knockout</a></h2>
+            Knockout 3.2 has been included via Bower, along with Knockout: <a href="https://github.com/stevesanderson/knockout-projections" target="_blank">projections</a>, <a href="https://github.com/rniemeyer/knockout-postbox" target="_blank">postbox</a>, <a href="https://github.com/mbest/knockout.punches" target="_blank">punches</a> and <a href="https://github.com/Knockout-Contrib/Knockout-Validation" target="_blank">validation</a>
+        </li>
+        <li>
+            <h2><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></h2>
+            Bootstrap 3.1.1 has been included via Bower and is bundled as part of the CSS bundle.  The JavaScript has been included in /src/app/startup.ts
+        </li>
+        <li>
+            <h2>Misc JS Libraries</h2>
+            jQuery, jQuery UI, Crossroads, and Hasher have been included via Bower
+        </li>
+
+        <li>
+            <h2>Package Management</h2>
+            This project uses the following package managers:
+            <ul>
+                <li>
+                    <h3><a href="http://www.nuget.org/" target="_blank">NuGet</a></h3>
+                    NuGet manages the C# dependencies, including MVC, etc.
+                </li>
+                <li>
+                    <h3><a href="https://www.npmjs.org/" target="_blank">NPM</a></h3>
+                    NPM is used for all node dependencies and they are only used via Gulp at build time.  NPM lists its dependencies in <a href="/package.json">/package.json</a>
+                    <br /><b>Note:</b>You will need to have <a href="http://nodejs.org/download" target="_blank">Node</a> installed and available from the command line for npm to restore packages
+                </li>
+                <li>
+                    <h3><a href="http://bower.io/" target="_blank">Bower</a></h3>
+                    Bower is used for most / all, client side library dependencies.  Bower is configured to store packages in /src/bower_modules and lists dependencies in <a href="/bower.json">/bower.json</a>
+                    <br /><b>Note:</b>You will need to have <a href="http://git-scm.com/downloads" target="_blank">git</a> installed and available from the command line for bower to restore packages
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <h2><a href="http://gulpjs.com" target="_blank">Gulp</a></h2>
+            Gulp is used to do all of the non C# related builds, so TypeScript, LESS, Glyphs, RequireJS optimizer, minification, etc are all built through Gulp.
+            <br /><b>Note:</b> This project shares build configurations for both MSBuild and Gulp, these configurations are "Dev", "Test" and "Prod".  For more information about what is included in the gulp builds, see the gulp configuration file in <a href="/gulpfile.js">/gulpfile.js</a>
+        </li>
+        <li>
+            <h2><a href="/src/test">Client Side Unit Testing</a></h2>
+            This project uses a couple of tools for unit testing, a framework and a runner
+            <ul>
+                <li>
+                    <h3><a href="http://jasmine.github.io/" target="_blank">Jasmine</a></h3>
+                    Jasmine is the unit testing framework used.  Unit tests are written in TypeScript and are runnable via the browser by navigating to <a href="/src/test">/src/test</a>.
+                    To add new unit tests to the project, you should write your unit test in TypeScript, like the other unit tests, and include them in <a href="/src/test/all-tests.ts">/src/test/all-tests.ts</a> via an /// &lt;amd-dependency&gt; tag
+                    <br /><b>Note:</b> scaffolding for this is coming soon
+                </li>
+
+                <li>
+                    <h3><a href="http://karma-runner.github.io/" target="_blank">Karma</a></h3>
+                    Karma is a test runner that allows us to run unit tests in a number of different ways.  By default, it runs them from the command line and outputs test results in a jUnit format, for use with a CI platform such as Jenkins.  Karma has been configured to run all tests referenced from <a href="/src/test/all-tests.ts">/src/test/all-tests.ts</a> (just like jasmine)
+                </li>
+            </ul>
+
+        </li>
+
+        <li>
+            <h2><a href="http://lesscss.org/features/" target="_blank">LESS</a></h2>
+            LESS is built as part of a Gulp build step.  Currently, only <a href="/src/css/styles.less">/src/css/styles.less</a> is the only LESS file being built / included.  This means that you will need to @import your files in there to include it in the main css bundle.
+        </li>
+        <li>
+            <h2><a href="#glyphs">Glyphs</a></h2>
+            Glyph fonts are generated at build time via gulp. See the <a href="#glyphs">Glyphs page</a> for a list of all glyphs.  There is one font created per folder inside the /glyph/icon-sets folder.  For example, there are 3 folders, icons, set2, set3, so there are 3 font / css files generated for those folders.
+        </li>
+        <li>
+            <h1>Scaffolding</h1>
+
+            TO DO: Add lots of info about all the companion scaffolders that can be used with this project
+        </li>
+        <li>
+            <h2>Utility Batch Files</h2>
+            
+            <ul>
+                <li>
+                    <h3>pre-build</h3>
+                </li>
+                <li>
+                    <h3>force-restore-packages.bat</h3>
+                </li>
+
+                <li>
+                    <h3>watch.bat</h3>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</div>

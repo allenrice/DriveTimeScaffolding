@@ -1,0 +1,35 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".html" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="RegisterComponent" type="System.Boolean" #>
+<#@ parameter name="DynamicallyLoaded" type="System.Boolean" #>
+<#@ parameter name="ComponentName" type="System.String" #>
+<#@ parameter name="GenerateStrippedDownComponent" type="System.Boolean" #>
+<#
+	if (GenerateStrippedDownComponent){
+#>
+<!-- 
+Usage: 
+	<<#= ComponentName #>></<#= ComponentName #>>
+	or
+	<div data-bind="component: { name: '<#= ComponentName #>' }"></div>
+-->
+<div>
+
+</div>
+<# } else { #>
+<!-- 
+Usage: 
+	<<#= ComponentName #> params="data: someObservable"></<#= ComponentName #>>
+	or
+	<div data-bind="component: { name: '<#= ComponentName #>', params: { data: someObservable } }"></div>
+-->
+
+<div data-bind="text: greeting">
+	
+</div>
+<# } #>

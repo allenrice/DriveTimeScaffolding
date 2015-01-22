@@ -1,0 +1,17 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="FullPathForAmdDependency" type="System.String" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+/// <amd-dependency path="<#= FullAMDPathToComponentForRegistrar #>" />
+<#
+foreach (var line in File.ReadAllLines(FullPathForAmdDependency)) {
+	// restore the line
+	#><#= line #>
+<# } #>

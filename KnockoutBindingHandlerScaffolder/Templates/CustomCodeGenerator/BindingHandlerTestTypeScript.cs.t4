@@ -1,0 +1,74 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="CustomBindingHandlerName" type="System.String" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+/// <amd-dependency path="<#= FullAMDPathToComponentForRegistrar #>" />
+/// <reference path="../../jasmine.d.ts" />
+
+import ko = require("knockout");
+import target = require("");
+
+describe('custom binding handler', () => {
+
+	// This is our DOM for the purposes of this test
+    var dom: HTMLElement = null;
+ 
+    beforeEach(() => {
+        // setup the simulated DOM for the next test
+        dom = document.createElement("BODY");
+    });
+ 
+ 
+    afterEach(() => {
+        // tear down the "dom" so its ready to be setup again
+        ko.cleanNode(dom);
+        dom = null;
+    });
+
+	describe('<#= CustomBindingHandlerName #>', () => {
+	
+		// use this as your dom element for unit tests for '<#= CustomBindingHandlerName #>'
+        var element: JQuery;
+
+		beforeEach(() => {
+            // we could easily put this in each test below, but i've chosen to use the same
+            element = $("<div data-bind='<#= CustomBindingHandlerName #>: someProperty'></div>");
+            // add this newly created element to the dom
+            dom.appendChild(element[0]);
+        });
+ 
+        afterEach(() => {
+            // this is probably overkill since its handled above in the previous afterEach
+            ko.cleanNode(element[0])
+            element = null;
+        });
+ 
+
+		it('should do something', () => {
+
+			// create a sample VM to test the binding handler with
+            var viewModel = {
+                someProperty: ko.observable("someValue")
+            };
+ 
+            // calling apply bindings against our sample dom will make KO look for and consume the custom binding handler
+            ko.applyBindings(viewModel, dom);
+ 
+            // TODO: now we can look at our element and make some sort of determination that things went properly
+            
+ 
+            // if we update our property that we bound to the custom binding handler, we should be able to see that change in the DOM
+            viewModel.someProperty("new value");
+ 
+            // TODO: check to make sure it changed in the DOM
+            
+		
+		});
+	});
+
+});

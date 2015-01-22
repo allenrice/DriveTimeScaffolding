@@ -1,0 +1,49 @@
+<Window x:Class="KnockoutBindingHandlerScaffolder.UI.SelectModelWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" SizeToContent="WidthAndHeight"  Title="Add new Knockout Custom Binding Handler" MinWidth="520" MinHeight="305" d:DesignHeight="734">
+    <Grid>
+        <!--<Label Content="Choose a Model Type:" HorizontalAlignment="Left"   Margin="35,39,0,0" VerticalAlignment="Top"/>-->
+        <!--<ComboBox HorizontalAlignment="Left"
+              Margin="169,43,0,0"
+              VerticalAlignment="Top"
+              ItemsSource="{Binding ModelTypes}"
+              DisplayMemberPath="DisplayName"
+              SelectedItem="{Binding SelectedModelType, Mode=OneWayToSource}"
+              Width="311"/>-->
+        <Button Content="Add" IsDefault="True" HorizontalAlignment="Left" Margin="320,261,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.187,0.75" Click="Button_Click"/>
+        <Button Content="Cancel" IsCancel="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="405,261,0,0"/>
+        <CheckBox IsChecked="{Binding GenerateLessFile, Mode=TwoWay}" Content="Generate LESS file for component" HorizontalAlignment="Left" Margin="169,114,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsEnabled="{Binding GenerateLessFile, Mode=OneWay}" IsChecked="{Binding ImportLessFile, Mode=TwoWay}" Content="Import generated LESS file into all-components.less" HorizontalAlignment="Left" Margin="169,134,0,0" VerticalAlignment="Top"/>
+        
+        <CheckBox IsChecked="{Binding CreateInitCallback, Mode=TwoWay}" Content="Create init callback" HorizontalAlignment="Left" Margin="169,174,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsChecked="{Binding CreateUpdateCallback, Mode = TwoWay}" Content="Create update callback" HorizontalAlignment="Left" Margin="169,194,0,0" VerticalAlignment="Top"/>
+
+        <TextBox Text="{Binding CustomBindingHandlerName, Mode = TwoWay}" HorizontalAlignment="Left" Height="23" Margin="169,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312"/>
+        <Label Content="New binding handler name:" HorizontalAlignment="Left"   Margin="12,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+        <CheckBox IsChecked="{Binding GenerateUnitTests, Mode=TwoWay}" Content="Generate empty unit tests" HorizontalAlignment="Left" Margin="169,234,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.725,7.4"/>
+        <Expander Header="Advanced" HorizontalAlignment="Left" Margin="169,291,0,20" VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Left" Height="272" VerticalAlignment="Top" Width="518" Margin="-156,0,0,0" Grid.ColumnSpan="2">
+                <Label Content="Path to put amd-dependency in:" HorizontalAlignment="Left"   Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding IncludeAsGlobalDependency, Mode=OneWay}" Text="{Binding ComponentRegistrationLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="184,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                <Label Content="Path to put binding in**:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox Text="{Binding RootPathForBindingHandler, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="184,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                <Label Content="Path to parent test module:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding GenerateUnitTests, Mode=OneWay}" Text="{Binding UnitTestModuleLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="184,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                <Label Content="Path to put unit test in:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding GenerateUnitTests, Mode=OneWay}" Text="{Binding UnitTestCreationLocation, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="184,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                <Label Content="Path to LESS file:" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615"/>
+                <TextBox IsEnabled="{Binding ImportLessFile, Mode=OneWay}" Text="{Binding MasterLessFilePath, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="184,-27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                <Label Content="&#xA;** Note: If you change this path, you will have some very silght issues with pathing.  &#xA;You will just have to update the path registered in app/startup and maybe others" HorizontalAlignment="Left"   Margin="0,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,0.615" Height="62"/>
+            </StackPanel>
+        </Expander>
+        <CheckBox IsChecked="{Binding IncludeAsGlobalDependency, Mode=TwoWay}" Content="Include as an AMD dependency" HorizontalAlignment="Left" Margin="169,76,0,0" VerticalAlignment="Top"/>
+
+
+
+
+
+    </Grid>
+</Window>

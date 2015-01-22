@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Dev</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85070F96-77A8-45A6-AB97-B0B358B28F48}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DT.Templates.WebUI</RootNamespace>
+    <AssemblyName>DT.Templates.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Dev|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\Unity.Interception.3.5.1404.0\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\packages\Unity.Interception.3.5.1404.0\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TypeLite">
+      <HintPath>..\packages\TypeLite.0.9.3.0\lib\net4\TypeLite.dll</HintPath>
+    </Reference>
+    <Reference Include="TypeLite.Net4">
+      <HintPath>..\packages\TypeLite.0.9.3.0\lib\net4\TypeLite.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.5.1\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeLiteDemoClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="src\components\demo-application\demo-application-html.html" />
+    <Content Include="src\components\demo-page\demo-page-html.html" />
+    <Content Include="src\components\home-page\home-page-html.html" />
+    <Content Include="src\components\references-page\references-page-html.html" />
+    <Content Include="src\components\sprite-dump\sprite-dump-html.html" />
+    <Content Include="src\require.config.js" />
+    <Content Include="src\components\debug\debug-html.html" />
+    <Content Include="src\components\glyph-dump\glyph-dump-html.html" />
+    <Content Include="src\glyphs\icon-sets\icons\googleplus.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\holiday-ornament.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\home.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\less.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\linkedin.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\minus.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\more.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\open-hand.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\phone.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\ping-pong-paddle.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\pinterest.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\place-setting.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\plus.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\point-of-interest.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\pricetag.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\question-hollow.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\question-solid.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\spokes.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\sunshine.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\thin-plus.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\tire.svg" />
+    <Content Include="src\glyphs\icon-sets\icons\twitter.svg" />
+    <Content Include="src\glyphs\icon-sets\set2\close.svg" />
+    <Content Include="src\glyphs\icon-sets\set2\close2.svg" />
+    <Content Include="src\glyphs\icon-sets\set2\dollar-sign.svg" />
+    <Content Include="src\glyphs\icon-sets\set2\email.svg" />
+    <Content Include="src\glyphs\icon-sets\set2\facebook.svg" />
+    <Content Include="src\glyphs\icon-sets\set3\thin-plus.svg" />
+    <Content Include="src\glyphs\icon-sets\set3\tire.svg" />
+    <Content Include="src\glyphs\icon-sets\set3\twitter.svg" />
+    <Content Include="src\glyphs\template.css" />
+    <Content Include="src\karma.conf.js" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame1.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame10.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame11.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame12.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame13.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame14.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame15.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame16.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame2.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame3.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame4.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame5.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame6.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame7.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame8.png" />
+    <Content Include="src\sprites\sprite-sets\animation-sprite\frame9.png" />
+    <Content Include="src\sprites\sprite-sets\sprite1\ie-icon-transparent.png" />
+    <Content Include="src\sprites\sprite-sets\sprite1\learn-financing-carvana-bank.png" />
+    <Content Include="src\sprites\sprite-sets\sprite1\learn-financing-cash.png" />
+    <Content Include="src\sprites\sprite-sets\sprite1\out-of-area-tower.png" />
+    <Content Include="src\sprites\sprite-sets\sprite2\doc-verification-icon.png" />
+    <Content Include="src\sprites\sprite-sets\sprite2\doc-verification-warning-icon.png" />
+    <Content Include="src\test\index.html" />
+    <Content Include="src\test\require.config.js" />
+    <Content Include="sw-file-icon.png" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="_Definitions\_project.vstemplate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_preprocess.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\bindingHandlers\" />
+    <Folder Include="src\test\app\" />
+    <Folder Include="src\test\bindingHandlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+    <Content Include="force-restore-packages.bat" />
+    <Content Include="package.json" />
+    <Content Include="pre-build.bat" />
+    <Content Include="src\components\glyph-dump\glyph-dump.less" />
+    <Content Include="src\css\all-components.less" />
+    <Content Include="src\css\styles.less" />
+    <Content Include="src\test\.bowerrc" />
+    <Content Include="src\test\bower.json" />
+    <Content Include="watch.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\components\demo-page\demo-page.ts" />
+    <TypeScriptCompile Include="src\components\references-page\references-page.ts" />
+    <TypeScriptCompile Include="src\components\sprite-dump\sprite-dump.ts" />
+    <TypeScriptCompile Include="src\definition-files.d.ts" />
+    <TypeScriptCompile Include="src\components\demo-application\demo-application.ts" />
+    <TypeScriptCompile Include="src\components\home-page\home-page.ts" />
+    <TypeScriptCompile Include="src\Enums.ts">
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\moment.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\test\components\demo-application-tests.ts" />
+    <TypeScriptCompile Include="src\TypeLite.Net4.d.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeLite.Net4.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\customBindingHandlers.d.ts" />
+    <TypeScriptCompile Include="src\components\demo-application\router.ts" />
+    <TypeScriptCompile Include="src\app\startup.ts" />
+    <TypeScriptCompile Include="src\bootstrap.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\crossroads.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\hasher.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\jasmine.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\jqueryui.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\jquery.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\js-signals.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\knockout.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\require.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\knockout.projections.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\knockout.validation.d.ts">
+      <DependentUpon>definition-files.d.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\components\debug\debug.ts" />
+    <TypeScriptCompile Include="src\components\glyph-dump\glyph-dump.ts" />
+    <TypeScriptCompile Include="src\test\all-tests.ts" />
+    <TypeScriptCompile Include="src\test\components\debug.ts" />
+    <TypeScriptCompile Include="src\test\SpecRunner.browser.ts" />
+    <TypeScriptCompile Include="src\test\SpecRunner.karma.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\ScriptHelpers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\TypeLite.Net4.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeLite.Net4.d.ts</LastGenOutput>
+    </Content>
+    <Content Include="src\Manager.ttinclude" />
+    <Content Include="src\components\demo-application\demo-application.less" />
+    <Content Include="remove-npm-and-bower-packages.bat" />
+    <Content Include="src\sprites\template.mustache" />
+    <Content Include="src\components\sprite-dump\sprite-dump.less" />
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Prod.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Condition="false" Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <Target Name="CustomCollectFiles">
+    <ItemGroup>
+      <_DistFiles Include="dist\**\*" />
+      <FilesForPackagingFromProject Include="%(_DistFiles.Identity)">
+        <DestinationRelativePath>dist\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+      <_SrcFiles Include="src\**\*" />
+      <FilesForPackagingFromProject Include="%(_SrcFiles.Identity)">
+        <DestinationRelativePath>src\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <ExcludeFilesFromDeployment>force-restore-packages.bat;pre-build.bat;remove-npm-and-bower-packages.bat;watch.bat;bower.json;karma.conf.js;gulpfile.js;.tfignore;.bowerrc;package.json;packages.config</ExcludeFilesFromDeployment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForPackageDependsOn>
+    <CopyAllFilesToSingleFolderForMsdeployDependsOn>
+      CustomCollectFiles;
+      $(CopyAllFilesToSingleFolderForPackageDependsOn);
+    </CopyAllFilesToSingleFolderForMsdeployDependsOn>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2268</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2268/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+        cd "$(ProjectDir)"
+        call pre-build.bat $(ConfigurationName)
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="AfterClean">
+    <Exec Command="call pre-build.bat clean">
+    </Exec>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

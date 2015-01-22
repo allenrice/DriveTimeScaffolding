@@ -1,0 +1,40 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="FullPathToRegistrar" type="System.String" #>
+<#@ parameter name="VariableSafeComponentName" type="System.String" #>
+<#@ parameter name="DynamicallyLoaded" type="System.Boolean" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+<#@ parameter name="ComponentName" type="System.String" #>
+<# 
+if (!DynamicallyLoaded) {
+#>import <#= VariableSafeComponentName #> = require("<#= FullAMDPathToComponentForRegistrar #>");
+<#
+} 
+
+foreach (var line in File.ReadAllLines(FullPathToRegistrar)) {
+
+	// restore the line
+	#><#= line #>
+<#
+
+	if (line.Contains("[Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]"))
+	{
+		if (DynamicallyLoaded)
+		{
+		#>ko.components.register('<#= ComponentName #>', { require: '<#= FullAMDPathToComponentForRegistrar #>' });
+<#
+		}
+		else 
+		{
+		#>ko.components.register('<#= ComponentName #>', { viewModel: <#= VariableSafeComponentName #>.viewModel, template: <#= VariableSafeComponentName #>.template });
+<#
+		}
+	}
+} #>

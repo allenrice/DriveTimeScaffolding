@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="DriveTimeTemplatesWoot..93c49bfb-a87e-4343-b7da-70f6d31f6e49" Version="2.0" Language="en-US" Publisher="Allen Rice" />
+    <DisplayName>DriveTime Template and Scaffolding Pack</DisplayName>
+    <Description xml:space="preserve">Project template pack from DriveTime</Description>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,)" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:VsixSubPath="KnockoutComponentScaffolder" Path="|KnockoutComponentScaffolder|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:VsixSubPath="KnockoutBindingHandlerScaffolder" Path="|KnockoutBindingHandlerScaffolder|" />
+  </Assets>
+</PackageManifest>

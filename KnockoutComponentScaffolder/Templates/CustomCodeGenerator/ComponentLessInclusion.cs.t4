@@ -1,0 +1,23 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".less" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+<#@ parameter name="FullPathToMasterLessFile" type="System.String" #>
+<#
+foreach (var line in File.ReadAllLines(FullPathToMasterLessFile)) {
+
+	// restore the line
+	#><#= line #>
+<#
+	if (line.Contains("[Scaffolded components using LESS will be imported here. DO NOT REMOVE THIS COMMENT.]"))
+	{
+		#>@import "../<#= FullAMDPathToComponentForRegistrar #>.less";
+<#
+	}
+} #>

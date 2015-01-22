@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="CustomBindingHandlerName" type="System.String" #>
+<#@ parameter name="CreateUpdateCallback" type="System.Boolean" #>
+<#@ parameter name="CreateInitCallback" type="System.Boolean" #>
+
+import ko = require("knockout");
+
+ko.bindingHandlers["<#= CustomBindingHandlerName #>"] = {
+<#
+	if (CreateInitCallback) {
+#>
+    init: function (element: HTMLElement, valueAccessor: () => any, allBindings, viewModel, bindingContext: KnockoutBindingContext) {
+        // Use ko.unwrap(valueAccessor()) to get / observe the value from valueAccessor, if its an observable or not
+        // Use ko.applyBindingsToNode to apply default bindings to element
+	}<#= (CreateUpdateCallback) ? "," : "" #>
+<#
+	}
+	if (CreateUpdateCallback) {
+#>
+    update: function (element: HTMLElement, valueAccessor: () => any, allBindings, viewModel, bindingContext: KnockoutBindingContext) {
+        // Note: Using update is not recommended
+    }
+<#	}	#>
+}; 

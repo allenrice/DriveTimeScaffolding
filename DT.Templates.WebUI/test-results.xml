@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.9.7 (Windows 8)" package="" timestamp="2014-10-08T21:16:04" id="0" hostname="PCAZPHXCORP489">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
+    </properties>
+  </testsuite>
+  <testsuite name="PhantomJS 1.9.7 (Windows 8)" package="" timestamp="2014-10-08T21:16:04" id="0" hostname="PCAZPHXCORP489" tests="3" errors="0" failures="0" time="0.05">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
+    </properties>
+    <testcase name="should accept an observable and handle updates" time="0.043" classname="PhantomJS 1.9.7 (Windows 8).custom binding handler clickToCopy"/>
+    <testcase name="should accept non observable values" time="0.004" classname="PhantomJS 1.9.7 (Windows 8).custom binding handler clickToCopy"/>
+    <testcase name="should error when not passed a value" time="0.003" classname="PhantomJS 1.9.7 (Windows 8).custom binding handler clickToCopy"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

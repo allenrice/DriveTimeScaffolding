@@ -1,0 +1,28 @@
+﻿<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <!--TODO: this needs to be knockout driven--> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ appName }}</a>
+        </div>
+
+        <!--TODO: this needs to be knockout driven--> 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!-- ko foreach: allRoutes -->
+                <li><a href="#{{ url }}">{{ params.pageName }}</a></li>
+                <!-- /ko -->
+                <li><a href="/src/test">Unit Tests</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div data-bind='component: { name: route().pageComponent, params: $data }' class="demo-application-page-container"></div>

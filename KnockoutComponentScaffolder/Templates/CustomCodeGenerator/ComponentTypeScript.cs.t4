@@ -1,0 +1,49 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="ComponentName" type="System.String" #>
+<#@ parameter name="VariableSafeComponentName" type="System.String" #>
+<#@ parameter name="GenerateStrippedDownComponent" type="System.Boolean" #>
+/// <amd-dependency path="text!./<#= ComponentName #>-html.html" />
+/// <reference path="../../require.d.ts" />
+
+import ko = require("knockout");
+
+export var template: string = require("text!./<#= ComponentName #>-html.html");
+<#
+	if (GenerateStrippedDownComponent){
+#>
+
+export class viewModel {
+
+    constructor () {
+
+    }
+}
+
+<# } else { #>
+
+export class viewModel {
+
+    public greeting: KnockoutObservable<string>;
+
+    constructor (params?: <#= VariableSafeComponentName #>Args) {
+		this.greeting = params.data;
+    }
+}
+
+export interface <#= VariableSafeComponentName #>Args {
+	data: KnockoutObservable<string>;
+}
+
+<# } #>
+
+
+
+
+
+

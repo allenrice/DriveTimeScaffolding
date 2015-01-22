@@ -1,0 +1,24 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".ts" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="FullPathToUnitTestModuleLocation" type="System.String" #>
+<#@ parameter name="UnitTestModulePath" type="System.String" #>
+<#
+foreach (var line in File.ReadAllLines(FullPathToUnitTestModuleLocation)) {
+
+	// restore the line
+	#><#= line #>
+<#
+
+	if (line.Contains("[Scaffolded component unit test amd-dependencies will be inserted here. DO NOT ALTER OR REMOVE THIS COMMENT.]"))
+	{
+		#>/// <amd-dependency path="<#= UnitTestModulePath.Replace(@"\", "/").Replace("src/", "") #>" />
+<#
+	}
+} #>

@@ -1,0 +1,9 @@
+\node_modules
+\gulp-tsc-fixed\node_modules
+gulp-tsc-fixed\node_modules
+\src\bower_modules
+\dist
+node_modules
+src\bower_modules
+dist
+*tsc-tmp*

@@ -1,0 +1,23 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".js" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="EnvDTE" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="FullPathToGulpFile" type="System.String" #>
+<#@ parameter name="FullAMDPathToComponentForRegistrar" type="System.String" #>
+<# 
+
+foreach (var line in File.ReadAllLines(FullPathToGulpFile)) {
+	#><#= line #>
+<#
+
+	if (line.Contains("[Scaffolded component using runtime injection will be inserted here. To retain this feature, DO NOT REMOVE THIS COMMENT.]"))
+	{
+		#>            '<#=  FullAMDPathToComponentForRegistrar #>',
+<#
+	}
+} #>
